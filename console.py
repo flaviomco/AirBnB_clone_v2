@@ -12,12 +12,12 @@ from models.amenity import Amenity
 from models.review import Review
 
 
+
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
-
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Place': Place,
                'State': State, 'City': City, 'Amenity': Amenity,
@@ -37,6 +37,7 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
+
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
         (Brackets denote optional fields in usage example.)
         """
@@ -113,41 +114,39 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        """ Create an object of any class"""
+        """Create an object of any class"""
         if not args:
             print("** class name missing **")
             return
-        else:
-            params = args.split()
-            if params[0] not in HBNBCommand.classes:
-                print("** class doesn't exist **")
-                return
-            new_instance = HBNBCommand.classes[params[0]]()
-            for i in range(1, len(params)):
-                arg = params[i].split('=', 1)
-                value = ""
-                if arg[1][0] == '"' or arg[1][0] == "'":
-                    value = arg[1][1:-1]
-                    if '"' or "'" in value:
-                        value = value.replace('"', '\"')
-                    if "_" in value:
-                        value = value.replace('_', ' ')
+        params = args.split()
+        if params[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return
+        new_instance = eval(params[0])()
+        for i in range(1, len(params)):
+            arg = params[i].split('=', 1)
+            value = ""
+            if arg[1][0] == '"' or arg[1][0] == "'":
+                value = arg[1][1:-1]
+                if '"' or "'" in value:
+                    value = value.replace('"', '\"')
+                if "_" in value:
+                    value = value.replace('_', ' ')
+            else:
+                if '.' in arg[1]:
+                    try:
+                        value = float(arg[1])
+                    except:
+                        continue
                 else:
-                    if '.' in arg[1]:
-                        try:
-                            value = float(arg[1])
-                        except:
-                            continue
-                    else:
-                        try:
-                            value = int(arg[1])
-                        except:
-                            continue
-                if value != "":
-                    setattr(new_instance, arg[0], value)
-            storage.save()
-            print(new_instance.id)
-            storage.save()
+                    try:
+                        value = int(arg[1])
+                    except:
+                        continue
+            if value != "":
+                setattr(new_instance, arg[0], value)
+        print(new_instance.id)
+        new_instance.save()
 
     def help_create(self):
         """ Help information for the create method """
@@ -178,7 +177,7 @@ class HBNBCommand(cmd.Cmd):
 
         key = c_name + "." + c_id
         try:
-            print(storage._FileStorage__objects[key])
+            print(storage.all(c_name)[key])
         except KeyError:
             print("** no instance found **")
 
@@ -229,11 +228,11 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in storage.all(args).items():
                 if k.split('.')[0] == args:
                     print_list.append(str(v))
         else:
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in storage.all().items():
                 print_list.append(str(v))
 
         print(print_list)

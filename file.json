@@ -1,0 +1,340 @@
+{
+  "State.0391a737-c19d-4d4b-ab0a-b501812c8e6f": {
+    "id": "0391a737-c19d-4d4b-ab0a-b501812c8e6f",
+    "created_at": "2021-03-30T14:07:54.820164",
+    "updated_at": "2021-03-30T14:07:54.820200",
+    "name": "California",
+    "__class__": "State"
+  },
+  "State.34b6b92c-7596-45a9-9f8f-60352bb6e7db": {
+    "id": "34b6b92c-7596-45a9-9f8f-60352bb6e7db",
+    "created_at": "2021-03-30T14:07:54.821666",
+    "updated_at": "2021-03-30T14:07:54.821684",
+    "name": "Nevada",
+    "__class__": "State"
+  },
+  "State.f7b2f06b-9a8f-43f2-b9d8-40a93d370fd6": {
+    "id": "f7b2f06b-9a8f-43f2-b9d8-40a93d370fd6",
+    "created_at": "2021-03-30T15:58:50.316262",
+    "updated_at": "2021-03-30T15:58:50.316282",
+    "name": "California",
+    "__class__": "State"
+  },
+  "State.8ef9211d-86f6-4df7-ba5e-b4d4fa3d4029": {
+    "id": "8ef9211d-86f6-4df7-ba5e-b4d4fa3d4029",
+    "created_at": "2021-03-30T15:58:50.326281",
+    "updated_at": "2021-03-30T15:58:50.326297",
+    "name": "Nevada",
+    "__class__": "State"
+  },
+  "State.f6fae52b-2bd9-4c99-b9ff-2b541e26169a": {
+    "id": "f6fae52b-2bd9-4c99-b9ff-2b541e26169a",
+    "created_at": "2021-03-30T16:00:14.667539",
+    "updated_at": "2021-03-30T16:00:14.667561",
+    "name": "California",
+    "__class__": "State"
+  },
+  "City.3ffb1416-8440-4810-a43b-befb4a7700ea": {
+    "id": "3ffb1416-8440-4810-a43b-befb4a7700ea",
+    "created_at": "2021-03-30T16:00:14.668321",
+    "updated_at": "2021-03-30T16:00:14.668355",
+    "state_id": "f6fae52b-2bd9-4c99-b9ff-2b541e26169a",
+    "name": "San Francisco",
+    "__class__": "City"
+  },
+  "User.2348b7c9-77ce-4637-950b-3f837e27c028": {
+    "id": "2348b7c9-77ce-4637-950b-3f837e27c028",
+    "created_at": "2021-03-30T16:00:14.668917",
+    "updated_at": "2021-03-30T16:00:14.668951",
+    "email": "john@snow.com",
+    "password": "johnpwd",
+    "__class__": "User"
+  },
+  "Place.477b64ea-2288-4325-954f-cc64cb7ca894": {
+    "id": "477b64ea-2288-4325-954f-cc64cb7ca894",
+    "created_at": "2021-03-30T16:00:14.669516",
+    "updated_at": "2021-03-30T16:00:14.669554",
+    "user_id": "2348b7c9-77ce-4637-950b-3f837e27c028",
+    "city_id": "3ffb1416-8440-4810-a43b-befb4a7700ea",
+    "name": "House 1",
+    "__class__": "Place"
+  },
+  "Place.3ef6cc5b-8020-4ffd-ac9e-b29a19a41c9b": {
+    "id": "3ef6cc5b-8020-4ffd-ac9e-b29a19a41c9b",
+    "created_at": "2021-03-30T16:00:14.670277",
+    "updated_at": "2021-03-30T16:00:14.670310",
+    "user_id": "2348b7c9-77ce-4637-950b-3f837e27c028",
+    "city_id": "3ffb1416-8440-4810-a43b-befb4a7700ea",
+    "name": "House 2",
+    "__class__": "Place"
+  },
+  "Amenity.ea558966-d32a-4b98-b971-4128324ab039": {
+    "id": "ea558966-d32a-4b98-b971-4128324ab039",
+    "created_at": "2021-03-30T16:00:14.670930",
+    "updated_at": "2021-03-30T16:00:14.670958",
+    "name": "Wifi",
+    "__class__": "Amenity"
+  },
+  "Amenity.b27b4e88-0445-49b9-a24a-76bd54725b95": {
+    "id": "b27b4e88-0445-49b9-a24a-76bd54725b95",
+    "created_at": "2021-03-30T16:00:14.671614",
+    "updated_at": "2021-03-30T16:00:14.671638",
+    "name": "Cable",
+    "__class__": "Amenity"
+  },
+  "Amenity.8c494a06-7d96-4900-9be5-bdfe9bb10489": {
+    "id": "8c494a06-7d96-4900-9be5-bdfe9bb10489",
+    "created_at": "2021-03-30T16:00:14.672313",
+    "updated_at": "2021-03-30T16:00:14.672336",
+    "name": "Oven",
+    "__class__": "Amenity"
+  },
+  "State.cd58a4ab-3304-4ba0-a756-d48fbb1026a3": {
+    "id": "cd58a4ab-3304-4ba0-a756-d48fbb1026a3",
+    "created_at": "2021-03-30T16:02:29.886449",
+    "updated_at": "2021-03-30T16:02:29.886470",
+    "name": "California",
+    "__class__": "State"
+  },
+  "City.f76f05f5-47d8-43b6-809f-d00318d47632": {
+    "id": "f76f05f5-47d8-43b6-809f-d00318d47632",
+    "created_at": "2021-03-30T16:02:29.887329",
+    "updated_at": "2021-03-30T16:02:29.887364",
+    "state_id": "cd58a4ab-3304-4ba0-a756-d48fbb1026a3",
+    "name": "San Francisco",
+    "__class__": "City"
+  },
+  "User.1deeb3ce-da0c-4ed0-8d79-29f5b98a56f7": {
+    "id": "1deeb3ce-da0c-4ed0-8d79-29f5b98a56f7",
+    "created_at": "2021-03-30T16:02:29.888065",
+    "updated_at": "2021-03-30T16:02:29.888098",
+    "email": "john@snow.com",
+    "password": "johnpwd",
+    "__class__": "User"
+  },
+  "Place.6fda92f7-d26f-49ff-ac86-b5cf6e3b8a0e": {
+    "id": "6fda92f7-d26f-49ff-ac86-b5cf6e3b8a0e",
+    "created_at": "2021-03-30T16:02:29.888716",
+    "updated_at": "2021-03-30T16:02:29.888743",
+    "user_id": "1deeb3ce-da0c-4ed0-8d79-29f5b98a56f7",
+    "city_id": "f76f05f5-47d8-43b6-809f-d00318d47632",
+    "name": "House 1",
+    "__class__": "Place"
+  },
+  "Place.a9408477-7e30-4b26-91f6-a0465ecf1d78": {
+    "id": "a9408477-7e30-4b26-91f6-a0465ecf1d78",
+    "created_at": "2021-03-30T16:02:29.889375",
+    "updated_at": "2021-03-30T16:02:29.889411",
+    "user_id": "1deeb3ce-da0c-4ed0-8d79-29f5b98a56f7",
+    "city_id": "f76f05f5-47d8-43b6-809f-d00318d47632",
+    "name": "House 2",
+    "__class__": "Place"
+  },
+  "Amenity.80136560-927b-4ee5-b602-f09c3c12e24a": {
+    "id": "80136560-927b-4ee5-b602-f09c3c12e24a",
+    "created_at": "2021-03-30T16:02:29.890036",
+    "updated_at": "2021-03-30T16:02:29.890056",
+    "name": "Wifi",
+    "__class__": "Amenity"
+  },
+  "Amenity.cd6704be-40f1-458b-af62-439316c95efc": {
+    "id": "cd6704be-40f1-458b-af62-439316c95efc",
+    "created_at": "2021-03-30T16:02:29.890719",
+    "updated_at": "2021-03-30T16:02:29.890742",
+    "name": "Cable",
+    "__class__": "Amenity"
+  },
+  "Amenity.48eb95b0-8b2c-4271-a958-09b28e14b8ca": {
+    "id": "48eb95b0-8b2c-4271-a958-09b28e14b8ca",
+    "created_at": "2021-03-30T16:02:29.891421",
+    "updated_at": "2021-03-30T16:02:29.891441",
+    "name": "Oven",
+    "__class__": "Amenity"
+  },
+  "State.a8769086-dec0-4d56-81fb-a7e099cd922e": {
+    "id": "a8769086-dec0-4d56-81fb-a7e099cd922e",
+    "created_at": "2021-03-30T16:05:39.359271",
+    "updated_at": "2021-03-30T16:05:39.359288",
+    "name": "California",
+    "__class__": "State"
+  },
+  "City.3ef9918d-b211-4a00-9a47-dbb4c95e649a": {
+    "id": "3ef9918d-b211-4a00-9a47-dbb4c95e649a",
+    "created_at": "2021-03-30T16:05:39.361461",
+    "updated_at": "2021-03-30T16:05:39.361489",
+    "state_id": "a8769086-dec0-4d56-81fb-a7e099cd922e",
+    "name": "San Francisco",
+    "__class__": "City"
+  },
+  "User.a59d2d39-fc2f-41cb-9aae-02afc576c1e2": {
+    "id": "a59d2d39-fc2f-41cb-9aae-02afc576c1e2",
+    "created_at": "2021-03-30T16:05:39.362252",
+    "updated_at": "2021-03-30T16:05:39.362287",
+    "email": "john@snow.com",
+    "password": "johnpwd",
+    "__class__": "User"
+  },
+  "Place.2505f505-eb8a-4c68-b99a-53e94235c340": {
+    "id": "2505f505-eb8a-4c68-b99a-53e94235c340",
+    "created_at": "2021-03-30T16:05:39.363015",
+    "updated_at": "2021-03-30T16:05:39.363053",
+    "user_id": "a59d2d39-fc2f-41cb-9aae-02afc576c1e2",
+    "city_id": "3ef9918d-b211-4a00-9a47-dbb4c95e649a",
+    "name": "House 1",
+    "__class__": "Place"
+  },
+  "Place.55639ce8-c7b4-4d30-9be0-d87e03710dff": {
+    "id": "55639ce8-c7b4-4d30-9be0-d87e03710dff",
+    "created_at": "2021-03-30T16:05:39.363800",
+    "updated_at": "2021-03-30T16:05:39.363826",
+    "user_id": "a59d2d39-fc2f-41cb-9aae-02afc576c1e2",
+    "city_id": "3ef9918d-b211-4a00-9a47-dbb4c95e649a",
+    "name": "House 2",
+    "__class__": "Place"
+  },
+  "Amenity.8d3b83be-da01-4a38-b76b-cb225b71880a": {
+    "id": "8d3b83be-da01-4a38-b76b-cb225b71880a",
+    "created_at": "2021-03-30T16:05:39.364607",
+    "updated_at": "2021-03-30T16:05:39.364628",
+    "name": "Wifi",
+    "__class__": "Amenity"
+  },
+  "Amenity.8ff46512-39d4-4ed3-9154-d67cdacaa261": {
+    "id": "8ff46512-39d4-4ed3-9154-d67cdacaa261",
+    "created_at": "2021-03-30T16:05:39.365427",
+    "updated_at": "2021-03-30T16:05:39.365448",
+    "name": "Cable",
+    "__class__": "Amenity"
+  },
+  "Amenity.dad9e5cb-0b0a-4dd8-9287-a34c34fea7ca": {
+    "id": "dad9e5cb-0b0a-4dd8-9287-a34c34fea7ca",
+    "created_at": "2021-03-30T16:05:39.366280",
+    "updated_at": "2021-03-30T16:05:39.366300",
+    "name": "Oven",
+    "__class__": "Amenity"
+  },
+  "State.dd5d9463-433a-4aed-8124-de87b897fdca": {
+    "id": "dd5d9463-433a-4aed-8124-de87b897fdca",
+    "created_at": "2021-03-30T16:07:45.674667",
+    "updated_at": "2021-03-30T16:07:45.674683",
+    "name": "California",
+    "__class__": "State"
+  },
+  "City.a7a07ead-56b9-45c8-b66e-2a21e8b9f5b9": {
+    "id": "a7a07ead-56b9-45c8-b66e-2a21e8b9f5b9",
+    "created_at": "2021-03-30T16:07:45.676998",
+    "updated_at": "2021-03-30T16:07:45.677033",
+    "state_id": "dd5d9463-433a-4aed-8124-de87b897fdca",
+    "name": "San Francisco",
+    "__class__": "City"
+  },
+  "User.ba2f4677-3d3b-4522-8585-006fd38af5da": {
+    "id": "ba2f4677-3d3b-4522-8585-006fd38af5da",
+    "created_at": "2021-03-30T16:07:45.678830",
+    "updated_at": "2021-03-30T16:07:45.678881",
+    "email": "john@snow.com",
+    "password": "johnpwd",
+    "__class__": "User"
+  },
+  "Place.00e8a60d-d353-4c9d-a1d9-ad923bcca859": {
+    "id": "00e8a60d-d353-4c9d-a1d9-ad923bcca859",
+    "created_at": "2021-03-30T16:07:45.680728",
+    "updated_at": "2021-03-30T16:07:45.680774",
+    "user_id": "ba2f4677-3d3b-4522-8585-006fd38af5da",
+    "city_id": "a7a07ead-56b9-45c8-b66e-2a21e8b9f5b9",
+    "name": "House 1",
+    "__class__": "Place"
+  },
+  "Place.a23b97d0-fd62-459c-a4a4-50efc9acef7d": {
+    "id": "a23b97d0-fd62-459c-a4a4-50efc9acef7d",
+    "created_at": "2021-03-30T16:07:45.682344",
+    "updated_at": "2021-03-30T16:07:45.682382",
+    "user_id": "ba2f4677-3d3b-4522-8585-006fd38af5da",
+    "city_id": "a7a07ead-56b9-45c8-b66e-2a21e8b9f5b9",
+    "name": "House 2",
+    "__class__": "Place"
+  },
+  "Amenity.b55853d4-29b5-4999-8bff-0ca199656e8a": {
+    "id": "b55853d4-29b5-4999-8bff-0ca199656e8a",
+    "created_at": "2021-03-30T16:07:45.683679",
+    "updated_at": "2021-03-30T16:07:45.683705",
+    "name": "Wifi",
+    "__class__": "Amenity"
+  },
+  "Amenity.0348b71c-4532-4ec2-b162-2366834d5416": {
+    "id": "0348b71c-4532-4ec2-b162-2366834d5416",
+    "created_at": "2021-03-30T16:07:45.685499",
+    "updated_at": "2021-03-30T16:07:45.685534",
+    "name": "Cable",
+    "__class__": "Amenity"
+  },
+  "Amenity.0e549fb7-5b88-4ce0-a7d3-be5e879b82f1": {
+    "id": "0e549fb7-5b88-4ce0-a7d3-be5e879b82f1",
+    "created_at": "2021-03-30T16:07:45.687664",
+    "updated_at": "2021-03-30T16:07:45.687713",
+    "name": "Oven",
+    "__class__": "Amenity"
+  },
+  "State.17163a3f-6390-48bb-8e31-9fe353fe6443": {
+    "id": "17163a3f-6390-48bb-8e31-9fe353fe6443",
+    "created_at": "2021-03-30T16:08:07.396681",
+    "updated_at": "2021-03-30T16:08:07.396699",
+    "name": "California",
+    "__class__": "State"
+  },
+  "City.361508a6-f99f-4154-89b7-c5cb2700f17a": {
+    "id": "361508a6-f99f-4154-89b7-c5cb2700f17a",
+    "created_at": "2021-03-30T16:08:07.398178",
+    "updated_at": "2021-03-30T16:08:07.398207",
+    "state_id": "17163a3f-6390-48bb-8e31-9fe353fe6443",
+    "name": "San Francisco",
+    "__class__": "City"
+  },
+  "User.71f05450-f7ae-499c-947d-c9c8d5fe0648": {
+    "id": "71f05450-f7ae-499c-947d-c9c8d5fe0648",
+    "created_at": "2021-03-30T16:08:07.399473",
+    "updated_at": "2021-03-30T16:08:07.399502",
+    "email": "john@snow.com",
+    "password": "johnpwd",
+    "__class__": "User"
+  },
+  "Place.5106c80d-7d1b-4e61-8795-c6898d221db5": {
+    "id": "5106c80d-7d1b-4e61-8795-c6898d221db5",
+    "created_at": "2021-03-30T16:08:07.400794",
+    "updated_at": "2021-03-30T16:08:07.400823",
+    "user_id": "71f05450-f7ae-499c-947d-c9c8d5fe0648",
+    "city_id": "361508a6-f99f-4154-89b7-c5cb2700f17a",
+    "name": "House 1",
+    "__class__": "Place"
+  },
+  "Place.2e6d8809-1709-4ec6-962d-5bc73d147a4d": {
+    "id": "2e6d8809-1709-4ec6-962d-5bc73d147a4d",
+    "created_at": "2021-03-30T16:08:07.402042",
+    "updated_at": "2021-03-30T16:08:07.402072",
+    "user_id": "71f05450-f7ae-499c-947d-c9c8d5fe0648",
+    "city_id": "361508a6-f99f-4154-89b7-c5cb2700f17a",
+    "name": "House 2",
+    "__class__": "Place"
+  },
+  "Amenity.ce929529-62f2-41f7-943d-eff5411a0bab": {
+    "id": "ce929529-62f2-41f7-943d-eff5411a0bab",
+    "created_at": "2021-03-30T16:08:07.403704",
+    "updated_at": "2021-03-30T16:08:07.403748",
+    "name": "Wifi",
+    "__class__": "Amenity"
+  },
+  "Amenity.081b8170-1879-486f-82d8-e468274293f6": {
+    "id": "081b8170-1879-486f-82d8-e468274293f6",
+    "created_at": "2021-03-30T16:08:07.405422",
+    "updated_at": "2021-03-30T16:08:07.405449",
+    "name": "Cable",
+    "__class__": "Amenity"
+  },
+  "Amenity.9b9c8eb9-b43d-4424-b070-abe76c26f1ce": {
+    "id": "9b9c8eb9-b43d-4424-b070-abe76c26f1ce",
+    "created_at": "2021-03-30T16:08:07.407646",
+    "updated_at": "2021-03-30T16:08:07.407673",
+    "name": "Oven",
+    "__class__": "Amenity"
+  }
+}
