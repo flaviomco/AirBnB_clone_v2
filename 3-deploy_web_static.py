@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Fabric script based on the file 2-do_deploy_web_static.py that creates and
+Based on the file 2-do_deploy_web_static.py that creates and
 distributes an archive to the web servers
 """
 
@@ -11,7 +11,7 @@ env.hosts = ['142.44.167.228', '144.217.246.195']
 
 
 def do_pack():
-    """generates a tgz archive"""
+    """generates tgz archive"""
     try:
         date = datetime.now().strftime("%Y%m%d%H%M%S")
         if isdir("versions") is False:
