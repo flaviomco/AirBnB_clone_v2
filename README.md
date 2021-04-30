@@ -133,4 +133,7 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 ```
 <br>
 
-## Authors: Matías Pirez and Hugo Gomez.
+## Authors
+
+Flavio Orlando <2109@holbertonschool.com>
+Gianluca Dorelo <2077@holbertonschool.com>
