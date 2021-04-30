@@ -3,7 +3,7 @@
 import cmd
 import sys
 from models.base_model import BaseModel
-from models.__init__ import storage
+from models import storage
 from models.user import User
 from models.place import Place
 from models.state import State
@@ -12,12 +12,12 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Place': Place,
                'State': State, 'City': City, 'Amenity': Amenity,
@@ -114,37 +114,40 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        """Create an object of any class"""
-        if not args:
+        """ Create an object of any class"""
+        my_args_list = args.split(" ")
+        if len(my_args_list) == 0:
             print("** class name missing **")
             return
-        params = args.split()
-        if params[0] not in HBNBCommand.classes:
+        elif my_args_list[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        new_instance = eval(params[0])()
-        for i in range(1, len(params)):
-            arg = params[i].split('=', 1)
-            value = ""
-            if arg[1][0] == '"' or arg[1][0] == "'":
-                value = arg[1][1:-1]
-                if '"' or "'" in value:
-                    value = value.replace('"', '\"')
-                if "_" in value:
+        else:
+            # Create new object
+            new_instance = HBNBCommand.classes[my_args_list[0]]()
+            # Loop for setting attributes.
+            for i in range(1, len(my_args_list)):
+                attr = my_args_list[i].split("=")
+                key = attr[0]
+                value = attr[1]
+                if value[0] == '"':
+                    value = value[1:-1]
+                    str_list = []
+                    new_str = ""
+                    for char in value:
+                        str_list.append(char)
+                    for char in range(len(str_list)):
+                        if str_list[char] == '"':
+                            str_list[char] = '\"'
+                    for char in str_list:
+                        new_str += char
+                    value = new_str
                     value = value.replace('_', ' ')
-            else:
-                if '.' in arg[1]:
-                    try:
-                        value = float(arg[1])
-                    except:
-                        continue
+                elif '.' in value:
+                    value = float(value)
                 else:
-                    try:
-                        value = int(arg[1])
-                    except:
-                        continue
-            if value != "":
-                setattr(new_instance, arg[0], value)
+                    value = int(value)
+                setattr(new_instance, key, value)
         print(new_instance.id)
         new_instance.save()
 
@@ -177,7 +180,7 @@ class HBNBCommand(cmd.Cmd):
 
         key = c_name + "." + c_id
         try:
-            print(storage.all(c_name)[key])
+            print(storage._FileStorage__objects[key])
         except KeyError:
             print("** no instance found **")
 
@@ -222,19 +225,18 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """ Shows all objects, or all objects of a class"""
         print_list = []
-
+        dict_all = {}
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-            for k, v in storage.all(args).items():
-                if k.split('.')[0] == args:
-                    print_list.append(str(v))
+            dict_all = storage.all(args)
         else:
-            for k, v in storage.all().items():
-                print_list.append(str(v))
+            dict_all = storage.all()
 
+        for k, v in dict_all.items():
+            print_list.append(str(v))
         print(print_list)
 
     def help_all(self):
@@ -341,6 +343,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
